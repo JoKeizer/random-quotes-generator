@@ -4,70 +4,62 @@ project 1 - A Random Quote Generator
 ******************************************/
 
 // For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
+// Check the "Project Resources" section of the project instructions
+// Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
 /*** 
  * `quotes` array 
-***/
+ ***/
 
 
-const quotes = [
-    {
-        id: 1,
-        quote: "If you aren't going all the way why go at all?",
-        author: "Joe Namath",
-        year: "2020",
-        citation: "keepinspiring.me",
+const quotes = [{
+        quote: "If you aren't going all the way why go at all?",
+        author: "Joe Namath",
+        year: "2020",
+        citation: "keepinspiring.me",
         source: "quote-1.jpg",
         category: "Wisdom"
     },
     {
-        id: 2,
-        quote: "Never say never because limits, like fears are often just illusions",
-        author: "Michael Jordon",
-        year: "",
-        citation: "",
+        quote: "Never say never because limits, like fears are often just illusions",
+        author: "Michael Jordon",
+        year: "",
+        citation: "",
         source: "quote-2.jpg",
         category: "Sport"
 
     },
     {
-        id: 3,
-        quote: "Believe in yourself! Have faith in your abilities! Without a humble but reasonable confidence in your own powers you cannot be successful or happy.",
-        author: "Norman Vincent Peale",
-        year: "2020",
-        citation: "Instagram",
+        quote: "Believe in yourself! Have faith in your abilities! Without a humble but reasonable confidence in your own powers you cannot be successful or happy.",
+        author: "Norman Vincent Peale",
+        year: "2020",
+        citation: "Instagram",
         source: "quote-4.jpg",
         category: "Life"
 
     },
     {
-        id: 4,
-        quote: "And at the end of the day, your feet should be dirty, your hair messy and your eyes sparkling",
-        author: "Shanti",
-        year: "",
-        citation: "",
+        quote: "And at the end of the day, your feet should be dirty, your hair messy and your eyes sparkling",
+        author: "Shanti",
+        year: "",
+        citation: "",
         source: "quote-3.jpg",
         category: "Love"
 
-    },    {
-        id: 5,
-        quote: "Wie rijk wil zijn, moet niet zijn vermogen vermeerderen maar zijn hebzucht verminderen.",
-        author: "Plato",
-        year: "",
-        citation: "",
+    }, {
+        quote: "Wie rijk wil zijn, moet niet zijn vermogen vermeerderen maar zijn hebzucht verminderen.",
+        author: "Plato",
+        year: "",
+        citation: "",
         source: "quote-5.jpg",
         category: "Filosofie"
 
     },
 ];
 
-
-
 /***
  * `getRandomQuote` function
-***/
+ ***/
 
 function getRandomQuote() {
     let randomNumber = Math.floor(Math.random() * (quotes.length));
@@ -88,15 +80,11 @@ function getRandomColor() {
 
 /***
  * `printQuote` function
-***/
+ ***/
 
 function printQuote() {
 
     var getQuote = getRandomQuote();
-
-
-    // var quote = getQuote.quote +  getQuote.author + getQuote.year;
-
     document.body.style.backgroundColor = getRandomColor();
 
     var string = '<p class="quote">' + getQuote.quote + '</p>';
@@ -113,15 +101,13 @@ function printQuote() {
     const h1 = document.getElementsByTagName('h1')[0];
     h1.innerHTML = getQuote.category + ' ' + 'Quote';
 
-    document.getElementById('imageBackground').style.backgroundImage="url(img/" + getQuote.source + ")";
-
+    document.getElementById('imageBackground').style.backgroundImage = "url(img/" + getQuote.source + ")";
 
 }
 
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE OF CODE BELOW!!
-***/
-
+ ***/
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
