@@ -58,7 +58,7 @@ const quotes = [{
 ];
 
 /***
- * `getRandomQuote` function
+ * get random quote from array
  ***/
 
 function getRandomQuote() {
@@ -67,6 +67,10 @@ function getRandomQuote() {
     return newQuote;
 
 }
+
+/***
+ * Get random color for background
+ ***/
 
 function getRandomColor() {
     let letters = '0123456789ABCDEF';
@@ -77,12 +81,27 @@ function getRandomColor() {
     return color;
 }
 
+/***
+ * Set timeout function on quote
+ ***/
+
+var delay = 5000;
+
+function timeout() {
+    setTimeout(function () {
+        printQuote();
+        timeout();
+    }, delay);
+}
+
+timeout();
 
 /***
- * `printQuote` function
+ * printQuote function
  ***/
 
 function printQuote() {
+ 
 
     var getQuote = getRandomQuote();
     document.body.style.backgroundColor = getRandomColor();
@@ -100,6 +119,7 @@ function printQuote() {
 
     const h1 = document.getElementsByTagName('h1')[0];
     h1.innerHTML = getQuote.category + ' ' + 'Quote';
+
 
     document.getElementById('imageBackground').style.backgroundImage = "url(img/" + getQuote.source + ")";
 
